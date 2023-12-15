@@ -2,23 +2,13 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 14
     commands:
       - npm install -g next
       - npm install
   build:
     commands:
-      - |
-        cat <<EOT >> package.json
-        {
-          "scripts": {
-            "dev": "next dev",
-            "test": "echo \\"Error: no test specified\\" && exit 1",
-            "build": "next build && next export",
-            "start": "next start"
-          }
-        }
-        EOT
+      - bash ./script.sh
       - npm install
       - npm run build
   post_build:
