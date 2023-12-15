@@ -8,7 +8,6 @@ phases:
       - npm install
   build:
     commands:
-      - bash ./script.sh
       - npm install
       - npm run build
   post_build:
